@@ -1,9 +1,9 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
@@ -21,12 +21,9 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      }
+        test: /\.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   output: {
@@ -39,4 +36,5 @@ module.exports = {
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
   ],
-}
+};
+
