@@ -8,7 +8,6 @@ import Cookies from "universal-cookie";
 const RequireAuth = () => {
   const token = useSelector(selectCurrentToken);
   const cookie = new Cookies();
-  // const token = cookie.get("accessToken"); // ovo ne može zbog httpOnlyja
   const location = useLocation();
   return token ? (
     <Outlet />

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -15,9 +15,10 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route element={<RequireAuth />}>
+          {/* <Route element={<RequireAuth />}>
             <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
+          </Route> */}
+        <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </main>

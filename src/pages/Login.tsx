@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "../app/api/axios";
 
 function LoginForm() {
-  const LOGIN_URL = "http://localhost:3000/auth/signin";
+  // const LOGIN_URL = "http://localhost:8080/tcp/api/v1/auth/login"; //ovo se trenutno nigdje ne koristi...
 
   const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const errRef = useRef() as React.MutableRefObject<HTMLParagraphElement>;
@@ -28,6 +28,10 @@ function LoginForm() {
   useEffect(() => {
     setErrMsg("");
   }, [user, pwd]);
+
+  const testBackend = () => {
+    console.log("evo me");
+  }
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -96,6 +100,7 @@ function LoginForm() {
             </p>
           </div>
         </form>
+        <button onClick={testBackend}>test</button>
       </section>
     </>
   );
