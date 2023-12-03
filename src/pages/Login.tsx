@@ -1,10 +1,10 @@
-import { useRef, useState, useEffect, useContext } from "react";
+import { useRef, useState, useEffect, useContext } from 'react';
 
-import { useDispatch } from "react-redux";
-import { setCredentials } from "../features/auth/authSlice";
-import { useLoginMutation } from "../features/auth/authApiSlice";
-import { useNavigate } from "react-router-dom";
-import axios from "../app/api/axios";
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '../features/auth/authSlice';
+import { useLoginMutation } from '../features/auth/authApiSlice';
+import { useNavigate } from 'react-router-dom';
+import axios from '../app/api/axios';
 
 function LoginForm() {
   // const LOGIN_URL = "http://localhost:8080/tcp/api/v1/auth/login"; //ovo se trenutno nigdje ne koristi...
@@ -12,9 +12,9 @@ function LoginForm() {
   const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const errRef = useRef() as React.MutableRefObject<HTMLParagraphElement>;
 
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
-  const [errMsg, setErrMsg] = useState("");
+  const [user, setUser] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
@@ -26,12 +26,12 @@ function LoginForm() {
   }, []);
 
   useEffect(() => {
-    setErrMsg("");
+    setErrMsg('');
   }, [user, pwd]);
 
   const testBackend = () => {
-    console.log("evo me");
-  }
+    console.log('evo me');
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -39,16 +39,16 @@ function LoginForm() {
     try {
       const userData = await login({ username: user, password: pwd }).unwrap();
       dispatch(setCredentials({ ...userData, user }));
-      setUser("");
-      setPwd("");
-      navigate("/dashboard");
+      setUser('');
+      setPwd('');
+      navigate('/dashboard');
     } catch (err: any) {
       if (err.response?.status === 400) {
-        setErrMsg("Invalid Username or Password");
+        setErrMsg('Invalid Username or Password');
       } else if (err.response?.status === 401) {
-        setErrMsg("Unauthorized");
+        setErrMsg('Unauthorized');
       } else {
-        setErrMsg("Login failed");
+        setErrMsg('Login failed');
       }
       errRef.current.focus();
     }
@@ -59,17 +59,17 @@ function LoginForm() {
       <section>
         <p
           ref={errRef}
-          className={errMsg ? "errmsg" : "offscreen"}
+          className={errMsg ? 'errmsg' : 'offscreen'}
           aria-live="assertive"
         >
           {errMsg}
         </p>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="username">Username:</label>
           <input
-            type="email"
-            id="email"
+            type="username"
+            id="username"
             ref={userRef}
             autoComplete="off"
             onChange={(e) => setUser(e.target.value)}
@@ -107,3 +107,4 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
