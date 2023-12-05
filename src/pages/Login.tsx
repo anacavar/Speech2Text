@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setCredentials } from '../features/auth/authSlice';
 import { useLoginMutation } from '../features/auth/authApiSlice';
 import { useNavigate } from 'react-router-dom';
-import axios from '../app/api/axios';
 
 function LoginForm() {
-  // const LOGIN_URL = "http://localhost:8080/tcp/api/v1/auth/login"; //ovo se trenutno nigdje ne koristi...
+  // const LOGIN_URL = 'http://localhost:8080/tcp/api/v1/auth/login'; //ovo se trenutno nigdje ne koristi...
 
   const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const errRef = useRef() as React.MutableRefObject<HTMLParagraphElement>;
@@ -28,10 +27,6 @@ function LoginForm() {
   useEffect(() => {
     setErrMsg('');
   }, [user, pwd]);
-
-  const testBackend = () => {
-    console.log('evo me');
-  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -85,22 +80,7 @@ function LoginForm() {
             required
           />
           <button>Log In</button>
-          <div className="loginlinks">
-            <p>
-              Don't have an account?
-              <br />
-              <span>
-                <a href="/register">Sign Up</a>
-              </span>
-            </p>
-            <p>
-              <a href="/forgot-password" id="forgotpasswordlink">
-                Forgot password
-              </a>
-            </p>
-          </div>
         </form>
-        <button onClick={testBackend}>test</button>
       </section>
     </>
   );

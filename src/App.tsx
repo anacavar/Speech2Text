@@ -1,10 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import Navbar from "./components/Navbar";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import RequireAuth from "./components/RequireAuth";
-import ForgotPassword from "./pages/ForgotPassword";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
@@ -13,12 +11,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          {/* <Route element={<RequireAuth />}>
+          <Route element={<RequireAuth />}>
             <Route path="/dashboard" element={<Dashboard />} />
-          </Route> */}
-        <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </main>
@@ -26,3 +22,4 @@ function App() {
 }
 
 export default App;
+

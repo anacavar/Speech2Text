@@ -1,13 +1,10 @@
-import { useLocation, Navigate, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectCurrentToken } from "../features/auth/authSlice";
-import Cookies from "universal-cookie";
+import { useLocation, Navigate, Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectCurrentToken } from '../features/auth/authSlice';
 
-// For subsequent requests that require authentication, the frontend includes the JWT token in the request header.
-// Commonly, this is done using the Authorization header with a value like Bearer <token>.
 const RequireAuth = () => {
   const token = useSelector(selectCurrentToken);
-  const cookie = new Cookies();
+  console.log(token);
   const location = useLocation();
   return token ? (
     <Outlet />
@@ -17,3 +14,4 @@ const RequireAuth = () => {
 };
 
 export default RequireAuth;
+
