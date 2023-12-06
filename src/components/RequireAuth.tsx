@@ -4,7 +4,6 @@ import { selectCurrentUser } from '../features/auth/authSlice';
 
 const RequireAuth = () => {
   const user = useSelector(selectCurrentUser);
-  console.log(user);
   const location = useLocation();
   // je li provjeravanje usera safe enuff?
   return user ? (

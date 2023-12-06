@@ -10,6 +10,7 @@ const authSlice = createSlice({
       state.user = user;
     },
     logOut: (state, action) => {
+      console.log('please work');
       state.user = null;
       state.token = null;
       const navigate = useNavigate();
