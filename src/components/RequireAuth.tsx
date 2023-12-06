@@ -1,12 +1,13 @@
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectCurrentToken } from '../features/auth/authSlice';
+import { selectCurrentUser } from '../features/auth/authSlice';
 
 const RequireAuth = () => {
-  const token = useSelector(selectCurrentToken);
-  console.log(token);
+  const user = useSelector(selectCurrentUser);
+  console.log(user);
   const location = useLocation();
-  return token ? (
+  // je li provjeravanje usera safe enuff?
+  return user ? (
     <Outlet />
   ) : (
     <Navigate to="/" state={{ from: location }} replace />

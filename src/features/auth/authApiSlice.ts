@@ -9,11 +9,6 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body: { ...credentials },
       }),
-      onSuccess: (response, credentials, api, extraOptions) => {
-        const cookies = new Cookies();
-        const accessToken = cookies.get('batchstt_jwt');
-        console.log(accessToken);
-      },
     }),
   }),
 });

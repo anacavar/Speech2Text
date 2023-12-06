@@ -8,15 +8,8 @@ const authSlice = createSlice({
   initialState: { user: null, token: null },
   reducers: {
     setCredentials: (state, action) => {
-      // const { user, accessToken } = action.payload;
-      // state.user = user;
-      // state.token = accessToken;
-      const cookies = new Cookies();
-      const token = cookies.get('batchstt_jwt');
-      state.token = token;
-      console.log(token);
-      // const cookie = new Cookies();
-      // cookie.set("accessToken", accessToken, { secure: true, httpOnly: true }); // ee možda zbog http onlyja??
+      const { user } = action.payload;
+      state.user = user;
     },
     logOut: (state, action) => {
       state.user = null;
