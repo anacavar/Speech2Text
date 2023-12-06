@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { useNavigate } from 'react-router-dom';
-import Cookies from 'universal-cookie';
-import axios from 'axios';
 
 const authSlice = createSlice({
   name: 'auth',
