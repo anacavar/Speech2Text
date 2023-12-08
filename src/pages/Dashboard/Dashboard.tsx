@@ -5,21 +5,18 @@ import './Dashboard.scss';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-
-  const clicketyClick = () => {
-    console.log('log out');
-    // dispatch(logOut(null)); // how do I utilize this?
-  };
-
   const user = useSelector(selectCurrentUser);
-
   const welcome = user ? `Hello, ${user}!` : 'Hello!';
+
+  function logoutFunction() {
+    dispatch(logOut());
+  }
 
   return (
     <div className="s2t-content">
       <div className="s2t-side-menu">
         <p>{welcome}</p>
-        <button onClick={clicketyClick}>Log Out</button>
+        <button onClick={logoutFunction}>Log Out</button>
       </div>
       <div className="s2t-tablet">
         <h1>Dashboard</h1>
