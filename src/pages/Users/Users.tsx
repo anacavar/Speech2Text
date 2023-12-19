@@ -18,6 +18,10 @@ const Users = () => {
       <SideMenu />
       <div className="s2t-tablet">
         <h1>User Management</h1>
+        <p>
+          dodavat usere - username i pass editirat - updateat lozinku- brisat
+          usera po usernameu može napravit usera adminom
+        </p>
       </div>
     </div>
   );

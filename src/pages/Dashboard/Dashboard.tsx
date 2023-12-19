@@ -18,6 +18,7 @@ const Dashboard = () => {
       <SideMenu />
       <div className="s2t-tablet">
         <h1>Dashboard</h1>
+        <p>Stats...</p>
       </div>
     </div>
   );
