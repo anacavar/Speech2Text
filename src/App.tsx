@@ -1,18 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Navbar from './components/Navbar';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
+import Instances from './pages/Instances/Instances';
+import Users from './pages/Users/Users';
+
 import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
     <main>
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route element={<RequireAuth />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/instances" element={<Instances />} />
+            <Route path="/users" element={<Users />} />
           </Route>
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

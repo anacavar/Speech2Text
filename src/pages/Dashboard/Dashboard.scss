@@ -1,4 +1,19 @@
-.s2t-side-menu {
-  background-color: aliceblue;
+body {
+  margin: 0;
+  .s2t-content {
+    display: flex;
+    height: 100vh;
+  }
+  .s2t-tablet {
+    width: -moz-available;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    h1 {
+      width: inherit;
+      text-align: end;
+    }
+  }
 }
 

@@ -1,13 +1,11 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 
 import { useDispatch } from 'react-redux';
-import { setCredentials } from '../features/auth/authSlice';
-import { useLoginMutation } from '../features/auth/authApiSlice';
+import { setCredentials } from '../../features/auth/authSlice';
+import { useLoginMutation } from '../../features/auth/authApiSlice';
 import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
-  // const LOGIN_URL = 'http://localhost:8080/tcp/api/v1/auth/login'; //ovo se trenutno nigdje ne koristi...
-
   const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const errRef = useRef() as React.MutableRefObject<HTMLParagraphElement>;
 

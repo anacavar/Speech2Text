@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { logOut, selectCurrentUser } from '../../features/auth/authSlice';
 import { useDispatch } from 'react-redux';
-import './Dashboard.scss';
+import './Instances.scss';
 import SideMenu from '../../components/SideMenu/SideMenu';
 
-const Dashboard = () => {
+const Instances = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectCurrentUser);
   const welcome = user ? `Hello, ${user}!` : 'Hello!';
@@ -17,11 +17,11 @@ const Dashboard = () => {
     <div className="s2t-content">
       <SideMenu />
       <div className="s2t-tablet">
-        <h1>Dashboard</h1>
+        <h1>Instances</h1>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Instances;
 
