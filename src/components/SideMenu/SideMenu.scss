@@ -18,7 +18,6 @@
       padding-top: 10px;
       padding-bottom: 10px;
       text-align: left;
-      background: none;
       border: none;
       font-size: 20px;
       width: -moz-available;
@@ -32,6 +31,15 @@
     }
     a:hover {
       background-color: lavender;
+    }
+    a:active {
+      background-color: lavenderblush;
+    }
+    a.current {
+      background-color: lavenderblush;
+    }
+    a.current:hover {
+      background-color: lavenderblush;
     }
   }
   #log-out {
