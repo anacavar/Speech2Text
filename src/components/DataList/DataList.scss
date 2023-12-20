@@ -1,0 +1,21 @@
+.s2t-data-list {
+  display: flex;
+  flex-direction: column;
+  .s2t-data-item {
+    border: 2px solid gainsboro;
+    border-bottom: none;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-family: 'ubuntu';
+    color: black;
+  }
+  .s2t-data-item:last-child {
+    border-bottom: 2px solid gainsboro;
+  }
+  .s2t-data-item:hover {
+    background-color: ghostwhite;
+  }
+}
+

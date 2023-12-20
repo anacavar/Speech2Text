@@ -1,29 +1,20 @@
-import { useSelector } from 'react-redux';
-import { logOut, selectCurrentUser } from '../../features/auth/authSlice';
-import { useDispatch } from 'react-redux';
 import './Instances.scss';
 import SideMenu from '../../components/SideMenu/SideMenu';
+import ListTemplate from '../../components/ListTemplate/ListTemplate';
 
 const Instances = () => {
-  const dispatch = useDispatch();
-  const user = useSelector(selectCurrentUser);
-  const welcome = user ? `Hello, ${user}!` : 'Hello!';
+  const testDataset = ['Instance 1', 'Instance 2', 'Instance 3', 'Instance 4'];
 
-  function logoutFunction() {
-    dispatch(logOut());
-  }
+  const content = {
+    title: 'Instances',
+    text: 'add/remove instancu URl, boolean radio button Da/Ne - default da tablica instanci disableat instancu - ostane u tablici samo je disabled, može se enableat get statistics - nekako displayat all API je za dobit sve instance - dohvaća sve od ulogiranog usera',
+  };
 
   return (
     <div className="s2t-content">
       <SideMenu />
       <div className="s2t-tablet">
-        <h1>Instances</h1>
-        <p>
-          add/remove instancu URl, boolean radio button Da/Ne - default da
-          tablica instanci disableat instancu - ostane u tablici samo je
-          disabled, može se enableat get statistics - nekako displayat all API
-          je za dobit sve instance - dohvaća sve od ulogiranog usera
-        </p>
+        <ListTemplate dataset={testDataset} content={content} />
       </div>
     </div>
   );

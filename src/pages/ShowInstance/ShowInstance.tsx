@@ -1,17 +1,16 @@
-import './Dashboard.scss';
+import './ShowInstance.scss';
 import SideMenu from '../../components/SideMenu/SideMenu';
 
-const Dashboard = () => {
+const ShowInstance = () => {
   return (
     <div className="s2t-content">
       <SideMenu />
       <div className="s2t-tablet">
-        <h1>Dashboard</h1>
-        <p>Stats...</p>
+        <p>This is an instance</p>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default ShowInstance;
 
