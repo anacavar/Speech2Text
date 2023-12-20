@@ -7,7 +7,7 @@ const Users = () => {
 
   const content = {
     title: 'User Management',
-    text: 'dodavat usere - username i pass editirat - updateat lozinku- brisat usera po usernameu može napravit usera adminom',
+    text: '',
   };
 
   return (

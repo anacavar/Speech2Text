@@ -7,7 +7,7 @@ const Instances = () => {
 
   const content = {
     title: 'Instances',
-    text: 'add/remove instancu URl, boolean radio button Da/Ne - default da tablica instanci disableat instancu - ostane u tablici samo je disabled, može se enableat get statistics - nekako displayat all API je za dobit sve instance - dohvaća sve od ulogiranog usera',
+    text: '',
   };
 
   return (
