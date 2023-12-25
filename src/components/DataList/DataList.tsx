@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import './DataList.scss';
+import EditableField from '../EditableField/EditableField';
 
 const DataList = ({ dataset }) => {
   return (
     <div className="s2t-data-list">
       {dataset.map((item) => (
-        <Link to="/instances/show" className="s2t-data-item">
-          {item}
-        </Link>
+        <div className="s2t-data-item">{item}</div>
       ))}
     </div>
   );
