@@ -2,16 +2,19 @@
   display: flex;
   flex-direction: column;
   .s2t-data-item {
+    display: flex;
     border: 2px solid gainsboro;
     border-bottom: none;
-    padding: 15px;
+    padding: 0;
     text-decoration: none;
     font-family: 'ubuntu';
     color: black;
     a {
+      width: 100%;
       text-decoration: none;
       color: black;
       font-family: 'ubuntu';
+      padding: 15px;
     }
   }
   .s2t-data-item:last-child {

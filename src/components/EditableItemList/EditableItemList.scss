@@ -1,18 +1,21 @@
-.s2t-data-list {
+.s2t-editable-list {
   display: flex;
   flex-direction: column;
-  .s2t-data-item {
+  .s2t-editable-item {
     border: 2px solid gainsboro;
     border-bottom: none;
     padding: 15px;
     text-decoration: none;
     font-family: 'ubuntu';
     color: black;
+    .s2t-editable-field {
+      width: 100%;
+    }
   }
-  .s2t-data-item:last-child {
+  .s2t-editable-item:last-child {
     border-bottom: 2px solid gainsboro;
   }
-  .s2t-data-item:hover {
+  .s2t-editable-item:hover {
     background-color: ghostwhite;
   }
 }

@@ -3,9 +3,9 @@ import EditableField from '../EditableField/EditableField';
 
 const EditableItemList = ({ dataset }) => {
   return (
-    <div className="s2t-data-list">
+    <div className="s2t-editable-list">
       {dataset.map((item) => (
-        <div className="s2t-data-item">
+        <div className="s2t-editable-item">
           <EditableField initial={item} />
         </div>
       ))}
