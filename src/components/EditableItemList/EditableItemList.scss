@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   .s2t-editable-item {
+    display: flex;
+    align-items: center;
     border: 2px solid gainsboro;
     border-bottom: none;
     padding: 15px;
@@ -11,6 +13,10 @@
     .s2t-editable-field {
       width: 100%;
       justify-content: space-between;
+    }
+    .fa-trash-can {
+      height: 20px;
+      margin: 10px;
     }
   }
   .s2t-editable-item:last-child {

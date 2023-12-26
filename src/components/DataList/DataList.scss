@@ -3,6 +3,7 @@
   flex-direction: column;
   .s2t-data-item {
     display: flex;
+    align-items: center;
     border: 2px solid gainsboro;
     border-bottom: none;
     padding: 0;
@@ -15,6 +16,10 @@
       color: black;
       font-family: 'ubuntu';
       padding: 15px;
+    }
+    .fa-trash-can {
+      height: 20px;
+      margin: 10px;
     }
   }
   .s2t-data-item:last-child {

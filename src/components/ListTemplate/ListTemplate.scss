@@ -4,9 +4,17 @@
     text-align: end;
   }
   .s2t-search {
-    margin-top: 10px;
-    margin-bottom: 10px;
     padding: 10px;
+  }
+  .s2t-list-functionalities {
+    display: flex;
+    justify-content: space-between;
+  }
+  .s2t-data-list {
+    margin-top: 10px;
+  }
+  .s2t-editable-list {
+    margin-top: 10px;
   }
 }
 
