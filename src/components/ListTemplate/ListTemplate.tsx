@@ -1,4 +1,4 @@
-import DataList from '../DataList/DataList';
+import Popup from '../Popup/Popup';
 import './ListTemplate.scss';
 
 const ListTemplate = ({ content }) => {
@@ -11,6 +11,7 @@ const ListTemplate = ({ content }) => {
         type="text"
         placeholder="Type to search..."
       />
+      <Popup popupContent={content.popupContent} />
       {content.list}
     </div>
   );

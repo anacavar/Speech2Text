@@ -4,8 +4,8 @@ import Login from './pages/Login/Login';
 import Instances from './pages/Instances/Instances';
 import Users from './pages/Users/Users';
 import ShowUser from './pages/ShowUser/ShowUser';
-import ShowInstance from './pages/ShowInstance/ShowInstance';
-
+import NewInstance from './pages/NewInstance/NewInstance';
+import NewUser from './components/NewUserForm/NewUserForm';
 import RequireAuth from './components/RequireAuth';
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
             <Route path="/instances" element={<Instances />} />
             <Route path="/users" element={<Users />} />
             <Route path="/users/show" element={<ShowUser />} />
-            <Route path="/instances/show" element={<ShowInstance />} />
           </Route>
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

@@ -1,0 +1,18 @@
+.s2t-popup {
+  position: absolute;
+  z-index: 1;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  padding: 25px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 2px solid gray;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+

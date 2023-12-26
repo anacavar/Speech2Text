@@ -30,7 +30,7 @@ const EditableField = ({ initial }) => {
         </>
       ) : (
         <>
-          <p>URL: {value}</p>
+          <p>{value}</p>
           <button onClick={handleEditClick}>Edit</button>
         </>
       )}
