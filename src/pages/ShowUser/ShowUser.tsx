@@ -7,10 +7,10 @@ const ShowUser = () => {
       <SideMenu />
       <div className="s2t-tablet">
         <p>
-          add/remove instancu URl, boolean radio button Da/Ne - default da
-          tablica instanci disableat instancu - ostane u tablici samo je
-          disabled, može se enableat get statistics - nekako displayat all API
-          je za dobit sve instance - dohvaća sve od ulogiranog usera
+          <li>dodavat usere (username i pass)</li>
+          <li>editirat (updateat lozinku)</li>
+          <li>brisat usera po usernameu</li>
+          <li>može napravit usera adminom</li>
         </p>
       </div>
     </div>

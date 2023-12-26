@@ -1,26 +1,24 @@
 import './Users.scss';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ListTemplate from '../../components/ListTemplate/ListTemplate';
-import { Link } from 'react-router-dom';
+import DataList from '../../components/DataList/DataList';
 
 const Users = () => {
-  const testDataset = [
-    <Link to="/users/show">User 1</Link>,
-    <Link to="/users/show">User 2</Link>,
-    <Link to="/users/show">User 3</Link>,
-    <Link to="/users/show">User 4</Link>,
-  ];
+  const testDataset = ['User 1', 'User 2', 'User 3', 'User 4'];
+
+  const list = <DataList dataset={testDataset} />;
 
   const content = {
     title: 'User Management',
     text: '',
+    list: list,
   };
 
   return (
     <div className="s2t-content">
       <SideMenu />
       <div className="s2t-tablet">
-        <ListTemplate dataset={testDataset} content={content} />
+        <ListTemplate content={content} />
       </div>
     </div>
   );

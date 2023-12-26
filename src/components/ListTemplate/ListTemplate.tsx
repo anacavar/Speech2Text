@@ -1,7 +1,7 @@
 import DataList from '../DataList/DataList';
 import './ListTemplate.scss';
 
-const ListTemplate = ({ dataset, content }) => {
+const ListTemplate = ({ content }) => {
   return (
     <div className="s2t-list-template">
       <h1>{content.title}</h1>
@@ -11,7 +11,7 @@ const ListTemplate = ({ dataset, content }) => {
         type="text"
         placeholder="Type to search..."
       />
-      <DataList dataset={dataset} />
+      {content.list}
     </div>
   );
 };
