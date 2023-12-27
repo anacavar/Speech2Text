@@ -6,8 +6,8 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 const DataList = ({ dataset }) => {
   return (
     <div className="s2t-data-list">
-      {dataset.map((item) => (
-        <div className="s2t-data-item">
+      {dataset.map((item, index) => (
+        <div className="s2t-data-item" key={index}>
           <Link to="/users/show">{item}</Link>
           <FontAwesomeIcon icon={faTrashCan} />
         </div>

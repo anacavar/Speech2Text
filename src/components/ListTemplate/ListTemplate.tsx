@@ -1,4 +1,5 @@
 import Popup from '../Popup/Popup';
+import SearchField from '../SearchField/SearchField';
 import './ListTemplate.scss';
 
 const ListTemplate = ({ content }) => {
@@ -7,11 +8,7 @@ const ListTemplate = ({ content }) => {
       <h1>{content.title}</h1>
       <p>{content.text}</p>
       <div className="s2t-list-functionalities">
-        <input
-          className="s2t-search"
-          type="text"
-          placeholder="Type to search..."
-        />
+        <SearchField handleSearch={content.handleSearch} />
         <Popup popupContent={content.popupContent} />
       </div>
       {content.list}
