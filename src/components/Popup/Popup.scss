@@ -4,7 +4,7 @@
   height: fit-content;
   width: 400px;
   background-color: white;
-  padding: 25px;
+  padding: 0;
   top: 0;
   bottom: 0;
   left: 0;
@@ -14,5 +14,38 @@
   border-radius: 10px;
   box-shadow: 5px 5px 5px 5px gray;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  .s2t-tabs {
+    display: flex;
+    button {
+      margin: 0;
+      border: none;
+      width: 100%;
+    }
+    button.active {
+      background-color: lavenderblush;
+      border-bottom: 2px solid ghostwhite;
+    }
+  }
+  .s2t-tab-content {
+    padding: 25px;
+    h2 {
+      margin: 0;
+    }
+  }
+  .s2t-popup-buttons {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .s2t-popup-background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 }
 

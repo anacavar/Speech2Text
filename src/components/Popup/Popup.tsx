@@ -25,37 +25,35 @@ const Popup = ({ buttonLabel, tabs }) => {
 
       {isFormVisible && (
         <div className="s2t-popup">
+          <div className="s2t-popup-background"></div>
           <div className="s2t-tabs-template">
-            <div>
-              <div>
-                {tabs.map((tab) => (
-                  <div>
-                    <button
-                      key={tab.id}
-                      onClick={() => handleTabChange(tab.id)}
-                      className={activeTab === tab.id ? 'active' : ''}
-                    >
-                      {tab.label}
-                    </button>
-                  </div>
-                ))}
-              </div>
-
-              <div>
-                {tabs.map((tab) => (
-                  <div
-                    key={tab.id}
-                    style={{ display: activeTab === tab.id ? 'block' : 'none' }}
-                  >
-                    <h2>{tab.label} Content</h2>
-                    <p>{tab.content}</p>
-                    {tab.form}
-                  </div>
-                ))}
-              </div>
+            <div className="s2t-tabs">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabChange(tab.id)}
+                  className={activeTab === tab.id ? 'active' : ''}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
-            <button onClick={togglePopup}>Cancel</button>
-            <button onClick={togglePopup}>Save</button>
+            <div className="s2t-tab-content">
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  style={{ display: activeTab === tab.id ? 'block' : 'none' }}
+                >
+                  <h2>{tab.label} Content</h2>
+                  <p>{tab.content}</p>
+                  {tab.form}
+                </div>
+              ))}
+            </div>
+            <div className="s2t-popup-buttons">
+              <button onClick={togglePopup}>Cancel</button>
+              <button onClick={togglePopup}>Save</button>
+            </div>
           </div>
         </div>
       )}
