@@ -10,10 +10,7 @@ const ListTemplate = ({ content }) => {
       <div className="s2t-list-functionalities">
         <SearchField handleSearch={content.handleSearch} />
         <div>
-          <Popup
-            buttonLabel={content.buttonLabel}
-            popupContent={content.popupContent}
-          />
+          <Popup buttonLabel={content.buttonLabel} tabs={content.tabs} />
         </div>
       </div>
       {content.list}

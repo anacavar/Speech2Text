@@ -9,10 +9,7 @@ const DataList = ({ dataset }) => {
     <div className="s2t-data-list">
       {dataset.items.map((item, index) => (
         <div className="s2t-data-item" key={index}>
-          {/* <Link to="/users/show">{item}</Link> */}
-          {/* <button>{item}</button> */}
-
-          <Popup buttonLabel={item} popupContent={dataset.popupContent} />
+          <Popup buttonLabel={item} tabs={dataset.tabs} />
           <FontAwesomeIcon icon={faTrashCan} />
         </div>
       ))}

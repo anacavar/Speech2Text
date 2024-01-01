@@ -24,35 +24,49 @@ const Instances = () => {
     setQuery(event.target.value);
   };
 
-  const dataListContent = {
-    items: results,
-    popupContent: {
-      title: 'test',
-      text: 'test',
+  const tabs = [
+    {
+      id: 'show',
+      label: 'Show',
+      content: 'This is the content to be shown.',
       form: form,
     },
+    {
+      id: 'edit',
+      label: 'Edit',
+      content: 'This is the content to be edited.',
+      form: form,
+    },
+    {
+      id: 'custom',
+      label: 'Custom',
+      content: 'This is some custom content.',
+      form: form,
+    },
+    // Add as many tabs as you like
+  ];
+
+  const dataListContent = {
+    items: results,
+    tabs: tabs,
   };
 
   const list = <DataList dataset={dataListContent} />;
 
-  const content = {
+  const listTemplateContent = {
     title: 'Instances',
     text: '',
     list: list,
     handleSearch: handleChange,
     buttonLabel: 'Add New',
-    popupContent: {
-      title: 'test',
-      text: 'test',
-      form: form,
-    },
+    tabs: tabs,
   };
 
   return (
     <div className="s2t-content">
       <SideMenu />
       <div className="s2t-tablet">
-        <ListTemplate content={content} />
+        <ListTemplate content={listTemplateContent} />
       </div>
     </div>
   );
