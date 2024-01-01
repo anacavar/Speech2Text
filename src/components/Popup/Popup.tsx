@@ -3,7 +3,7 @@ import './Popup.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const Popup = ({ popupContent }) => {
+const Popup = ({ buttonLabel, popupContent }) => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   const togglePopup = () => {
@@ -13,7 +13,7 @@ const Popup = ({ popupContent }) => {
   return (
     <div>
       <button onClick={togglePopup}>
-        <FontAwesomeIcon icon={faPlus} /> Add New
+        <FontAwesomeIcon icon={faPlus} /> {buttonLabel}
       </button>
 
       {isFormVisible && (

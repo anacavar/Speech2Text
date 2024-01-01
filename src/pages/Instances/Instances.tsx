@@ -1,9 +1,9 @@
 import './Instances.scss';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import ListTemplate from '../../components/ListTemplate/ListTemplate';
-import EditableItemList from '../../components/EditableItemList/EditableItemList';
 import NewInstanceForm from '../../components/NewInstanceForm/NewInstanceForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import DataList from '../../components/DataList/DataList';
 
 const Instances = () => {
   const testDataset = ['Instance 1', 'Instance 2', 'Instance 3', 'Instance 4'];
@@ -11,27 +11,36 @@ const Instances = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(testDataset);
 
-  const handleSearch = () => {
+  useEffect(() => {
     const lowerCaseQuery = query.toLowerCase();
     const filteredResults = testDataset.filter((item) =>
       item.toLowerCase().includes(lowerCaseQuery),
     );
     setResults(filteredResults);
     console.log(filteredResults);
-  };
+  }, [query]);
 
   const handleChange = (event) => {
     setQuery(event.target.value);
-    handleSearch();
   };
 
-  const list = <EditableItemList dataset={results} />;
+  const dataListContent = {
+    items: results,
+    popupContent: {
+      title: 'test',
+      text: 'test',
+      form: form,
+    },
+  };
+
+  const list = <DataList dataset={dataListContent} />;
 
   const content = {
     title: 'Instances',
     text: '',
     list: list,
     handleSearch: handleChange,
+    buttonLabel: 'Add New',
     popupContent: {
       title: 'test',
       text: 'test',
