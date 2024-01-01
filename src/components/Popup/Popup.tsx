@@ -11,8 +11,8 @@ const Popup = ({ buttonLabel, popupContent }) => {
   };
 
   return (
-    <div>
-      <button onClick={togglePopup}>
+    <div className="s2t-popup-item">
+      <button className="s2t-popup-button" onClick={togglePopup}>
         <FontAwesomeIcon icon={faPlus} /> {buttonLabel}
       </button>
 
