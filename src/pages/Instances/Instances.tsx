@@ -4,10 +4,12 @@ import ListTemplate from '../../components/ListTemplate/ListTemplate';
 import NewInstanceForm from '../../components/NewInstanceForm/NewInstanceForm';
 import { useEffect, useState } from 'react';
 import DataList from '../../components/DataList/DataList';
+import EditInstanceForm from '../../components/EditInstanceForm/EditInstanceForm';
 
 const Instances = () => {
   const testDataset = ['Instance 1', 'Instance 2', 'Instance 3', 'Instance 4'];
-  const form = <NewInstanceForm />;
+  const newInstanceForm = <NewInstanceForm />;
+  const form = <EditInstanceForm />;
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(testDataset);
 
@@ -23,6 +25,16 @@ const Instances = () => {
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
+
+  const addNewTabs = [
+    {
+      id: 'show',
+      label: 'Show',
+      content: 'This is the content to be shown.',
+      form: newInstanceForm,
+    },
+    // Add as many tabs as you like
+  ];
 
   const tabs = [
     {
@@ -59,7 +71,7 @@ const Instances = () => {
     list: list,
     handleSearch: handleChange,
     buttonLabel: 'Add New',
-    tabs: tabs,
+    tabs: addNewTabs,
   };
 
   return (

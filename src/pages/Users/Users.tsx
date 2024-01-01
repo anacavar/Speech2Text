@@ -4,10 +4,12 @@ import ListTemplate from '../../components/ListTemplate/ListTemplate';
 import DataList from '../../components/DataList/DataList';
 import NewUserForm from '../../components/NewUserForm/NewUserForm';
 import { useState, useEffect } from 'react';
+import EditUserForm from '../../components/EditUserForm/EditUserForm';
 
 const Users = () => {
   const testDataset = ['User 1', 'User 2', 'User 3', 'User 4'];
-  const form = <NewUserForm />;
+  const newUserForm = <NewUserForm />;
+  const form = <EditUserForm />;
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(testDataset);
 
@@ -23,6 +25,16 @@ const Users = () => {
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
+
+  const addNewTabs = [
+    {
+      id: 'new-user',
+      label: 'New User',
+      content: 'This is the content to be shown.',
+      form: newUserForm,
+    },
+    // Add as many tabs as you like
+  ];
 
   const tabs = [
     {
@@ -59,7 +71,7 @@ const Users = () => {
     list: list,
     handleSearch: handleChange,
     buttonLabel: 'Add New',
-    tabs: tabs,
+    tabs: addNewTabs,
   };
 
   return (
