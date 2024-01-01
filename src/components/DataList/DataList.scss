@@ -21,6 +21,19 @@
       height: 20px;
       margin: 10px;
     }
+    .s2t-popup-item {
+      width: 100%;
+      .s2t-popup-button {
+        width: 100%;
+        text-align: left;
+        border: none;
+        background: transparent;
+        margin: 0;
+        .fa-plus {
+          display: none;
+        }
+      }
+    }
   }
   .s2t-data-item:last-child {
     border-bottom: 2px solid gainsboro;
