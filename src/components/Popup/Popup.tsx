@@ -25,7 +25,7 @@ const Popup = ({ buttonLabel, tabs }) => {
 
       {isFormVisible && (
         <div className="s2t-popup">
-          <div className="s2t-popup-background"></div>
+          <div className="s2t-popup-background" onClick={togglePopup} />
           <div className="s2t-tabs-template">
             <div className="s2t-tabs">
               {tabs.map((tab) => (
