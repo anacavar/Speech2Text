@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const EditableItemList = ({ dataset }) => {
-  console.log('received dataset', dataset);
   return (
     <div className="s2t-editable-list">
       {dataset.map((item, index) => (

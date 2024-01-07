@@ -5,8 +5,26 @@ import DataList from '../../components/DataList/DataList';
 import NewUserForm from '../../components/NewUserForm/NewUserForm';
 import { useState, useEffect } from 'react';
 import EditUserForm from '../../components/EditUserForm/EditUserForm';
+import axios from 'axios';
 
 const Users = () => {
+  const [dataArray, setDataArray] = useState([]);
+
+  const apiUrl = 'http://127.0.0.1:8080/api/v1/admin/user/all'; // should be called as soon as the User screen is opened
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(apiUrl);
+      setDataArray(response.data); // Assuming the API response is an array
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  fetchData();
+
+  console.log(dataArray);
+
   const testDataset = ['User 1', 'User 2', 'User 3', 'User 4'];
   const newUserForm = <NewUserForm />;
   const form = <EditUserForm />;
@@ -19,7 +37,6 @@ const Users = () => {
       item.toLowerCase().includes(lowerCaseQuery),
     );
     setResults(filteredResults);
-    console.log(filteredResults);
   }, [query]);
 
   const handleChange = (event) => {

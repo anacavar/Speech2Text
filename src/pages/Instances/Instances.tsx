@@ -19,7 +19,6 @@ const Instances = () => {
       item.toLowerCase().includes(lowerCaseQuery),
     );
     setResults(filteredResults);
-    console.log(filteredResults);
   }, [query]);
 
   const handleChange = (event) => {

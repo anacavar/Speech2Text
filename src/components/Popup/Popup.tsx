@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Popup = ({ buttonLabel, tabs }) => {
-  console.log('here', tabs);
   const [isFormVisible, setFormVisible] = useState(false);
 
   const togglePopup = () => {
