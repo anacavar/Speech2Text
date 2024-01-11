@@ -9,19 +9,26 @@ import axios from 'axios';
 
 const Users = () => {
   const [dataArray, setDataArray] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const apiUrl = 'http://127.0.0.1:8080/api/v1/admin/user/all'; // should be called as soon as the User screen is opened
+  const apiUrl = 'http://localhost:8080/api/v1/admin/user/all'; // should be called as soon as the User screen is opened
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(apiUrl);
-      setDataArray(response.data); // Assuming the API response is an array
+      const response = await axios.get(apiUrl, {
+        withCredentials: true,
+      });
+      setDataArray(response.data);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching data:', error);
+      setLoading(false);
     }
   };
 
-  fetchData();
+  useEffect(() => {
+    fetchData();
+  }, []); // Empty dependency array means this effect runs once when the component mounts
 
   console.log(dataArray);
 

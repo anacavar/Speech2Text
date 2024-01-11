@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { setCredentials } from '../../features/auth/authSlice';
 import { useLoginMutation } from '../../features/auth/authApiSlice';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 function LoginForm() {
   const userRef = useRef() as React.MutableRefObject<HTMLInputElement>;
