@@ -4,6 +4,15 @@ import { useState } from 'react';
 const NewUserForm = () => {
   const [checked, setChecked] = useState(true);
 
+  // tu ide request na server
+  // {
+  //   "username": "<string>",
+  //   "password": "<string>",
+  //   "itemsProcessed": "<integer>"
+  // }
+
+  const api = 'http://localhost:8080/api/v1/admin/user/add';
+
   const checkboxClick = () => {
     setChecked(!checked);
   };
