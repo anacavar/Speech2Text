@@ -35,8 +35,6 @@ const Users = () => {
 
   const testDataset = dataArray.map((user) => user.username);
   const [results, setResults] = useState(testDataset);
-  console.log('initial results', results);
-  console.log('fetched dataset', testDataset);
   const newUserForm = <NewUserForm />;
   const form = <EditUserForm />;
 
@@ -45,7 +43,6 @@ const Users = () => {
     const filteredResults = testDataset.filter((item) =>
       item.toLowerCase().includes(lowerCaseQuery),
     );
-    console.log('filtered results', filteredResults);
     setResults(filteredResults);
   }, [query, testDataset]);
 
