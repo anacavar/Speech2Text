@@ -9,7 +9,8 @@ import axios from 'axios';
 
 const Users = () => {
   const [dataArray, setDataArray] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); //dodaj ovaj loader
+  const [query, setQuery] = useState('');
 
   const apiUrl = 'http://localhost:8080/api/v1/admin/user/all'; // should be called as soon as the User screen is opened
 
@@ -32,19 +33,21 @@ const Users = () => {
 
   console.log(dataArray);
 
-  const testDataset = ['User 1', 'User 2', 'User 3', 'User 4'];
+  const testDataset = dataArray.map((user) => user.username);
+  const [results, setResults] = useState(testDataset);
+  console.log('initial results', results);
+  console.log('fetched dataset', testDataset);
   const newUserForm = <NewUserForm />;
   const form = <EditUserForm />;
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState(testDataset);
 
   useEffect(() => {
     const lowerCaseQuery = query.toLowerCase();
     const filteredResults = testDataset.filter((item) =>
       item.toLowerCase().includes(lowerCaseQuery),
     );
+    console.log('filtered results', filteredResults);
     setResults(filteredResults);
-  }, [query]);
+  }, [query, testDataset]);
 
   const handleChange = (event) => {
     setQuery(event.target.value);
