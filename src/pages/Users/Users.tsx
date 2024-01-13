@@ -31,8 +31,6 @@ const Users = () => {
     fetchData();
   }, []); // Empty dependency array means this effect runs once when the component mounts
 
-  console.log(dataArray);
-
   const testDataset = dataArray.map((user) => user.username);
   const [results, setResults] = useState(testDataset);
   const newUserForm = <NewUserForm />;
@@ -44,7 +42,7 @@ const Users = () => {
       item.toLowerCase().includes(lowerCaseQuery),
     );
     setResults(filteredResults);
-  }, [query, testDataset]);
+  }, [query, dataArray]);
 
   const handleChange = (event) => {
     setQuery(event.target.value);
