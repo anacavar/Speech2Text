@@ -12,6 +12,7 @@ const Instances = () => {
   const form = <EditInstanceForm />;
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(testDataset);
+  const apiUrl = 'http://localhost:8080/api/v1/instances/add';
 
   useEffect(() => {
     const lowerCaseQuery = query.toLowerCase();
